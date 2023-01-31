@@ -72,15 +72,15 @@ const Selected = ({game}) => {
           {showSelected(3)}
         </div>
       </div>
-      <div className={styles.forFun}>
-      </div>
       <Legend game={game}/>
       {sessionStorage.getItem('user') &&
       <Submit game={game}/>}
       {game === 'genshin' ? <pre className={styles.warn}>
         원신의 경우 여성과 남성의 투표를 따로 받고있습니다.<br/>
-        본인의 성별에 맞게 투표해주세요. 여성과 남성투표에<br/>
-        모두 투표하는것은 불가능합니다.
+        본인의 성별에 맞게 투표해주세요. 본인이 여자면 여자투표에<br/>
+        남자면 남자투표에 투표하시면 됩니다. 여성과 남성투표에<br/>
+        모두 투표하는것은 불가능합니다.<br/>
+        ※또한 분류 버튼은 단순 편의성버튼입니다.
       </pre> : ''}
     </section>
     
