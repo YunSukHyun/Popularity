@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine&display=swap');
+.selected {
+  flex-basis: 50%;
+  background-color: rgba(219, 215, 212, 0.7);
+}
+
+.afterSelect{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1em;
+  color: brown;
+}
+
+.mustRead{
+  font-size: large;
+  margin-left: 0.5em;
+  color:red;
+}
+.home {
+  font-family: 'Domine', serif;
+  font-size: 1.5em;
+  margin: 0.5em;
+}
+.home:hover{
+  color:dodgerblue;
+}
+.score3{
+  background-color: rgba(212, 175, 55, 0.8);
+}
+.score2{
+  background-color: rgba(192, 192, 192, 0.8);
+}
+.score1{
+  background-color: rgba(205, 127, 50, 0.8);
+}
+
+.toServer img {
+  margin: 1em;
+  width: 12em;
+  height: 12em;
+}
+
+.toServer img:hover{
+  opacity: 0.8;
+}
+
+.warn {
+  font-weight: bold;
+  font-size: large;
+  margin-left: 1em;
+}
+

@@ -1,0 +1,28 @@
+.img {
+  display: flex;
+  justify-content: center;
+  padding-top: 15em;
+}
+.priconne, .genshin{
+  height:32vh;
+  width: 18vw;
+  margin: 1em;
+}
+
+.priconne:hover, .genshin:hover {
+  opacity: 0.75;
+}
+
+.user{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sign {
+  margin: 0.5em;
+  border-radius: 50%;
+  background-color:coral;
+  color: white;
+  padding: 0.5em;
+  font-size: 2em;
+}
