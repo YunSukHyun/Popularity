@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { login, logout, onUserStateChange } from '../../service/firebase';
 import styles from './header.module.css';
 
-const Header = (props) => {
-
+const Header = ({title}) => {
+  const [user, setUser] = useState();
+  useEffect(() => {
+    onUserStateChange(setUser);
+  }, []);
   return (
     <header className={styles.header}>
-
-      <h2 className={styles.title}>{props.title}</h2>
+      <span className={styles.title}>{title}</span>
+      {title !== '인기투표' ? !user && <button className={styles.login} onClick={login}>Google login</button> : ''}
+      {user && <button className={styles.login} onClick={logout}>Logout</button>}
     </header>
   )
 };

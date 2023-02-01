@@ -5,7 +5,7 @@ import { gReset} from '../../slice/genshinSlice';
 import SelectedChar from '../selectedChar/selectedChar';
 import { Link } from 'react-router-dom';
 import Legend from '../legend/legend';
-import Submit from '../submit/submit';
+import Submit from '../submit/submit';;
 
 const Selected = ({game}) => {
   const pCharSelected = useSelector(state => state.priconne.pCharSelected);

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { login, logout, onUserStateChange } from '../../service/firebase';
+import Header from '../header/header';
 import User from '../user/user';
 import styles from "./home.module.css";
 
@@ -13,6 +14,7 @@ const Home = () => {
 
   return (
     <>
+      <Header title='인기투표'/>
       <div className={styles.img}>
         <Link to="/genshin">
           <img className={styles.genshin} src="image/link_img/genshin.png" alt="genshin"/>
