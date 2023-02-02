@@ -1,0 +1,8 @@
+.unselected {
+  cursor: pointer;
+  max-width: 5em;
+}
+
+.unselected:hover{
+  filter: brightness(90%);
+}
