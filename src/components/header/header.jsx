@@ -6,7 +6,7 @@ const Header = ({title}) => {
   const [user, setUser] = useState();
   useEffect(() => {
     onUserStateChange(setUser);
-  }, []);
+  }, [user]);
   return (
     <header className={styles.header}>
       <span className={styles.title}>{title}</span>

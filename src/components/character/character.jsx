@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import styles from './character.module.css';
 import { gSelect } from '../../slice/genshinSlice';
 import { pSelect } from '../../slice/priconneSlice';
+import CharacterCard from '../characterCard/characterCard';
 const Character = ({char, game}) => {
   const pCharSelected = useSelector(state => state.priconne.pCharSelected);
   const gCharSelected = useSelector(state => state.genshin.gCharSelected);
@@ -46,17 +47,18 @@ const Character = ({char, game}) => {
   return (
     <div className={styles.imgBox}>
       <div className={styles.tooltip} onMouseMove={handleMouseMove}>
+      <CharacterCard
+        game={game}
+        char={char}
+        callback={handleSelect}
+        selected={false}
+      />
       <img
-        src={`image\\${game}_img\\${char}.png`}
-        className={styles.item}
-        onClick={handleSelect}
-        alt={`${char}`}/>
-        <img
         style={{top: `${xy.y+10}px`, left: `${xy.x + 5}px`}}
         className={styles.tooltipImg}
         src={`image\\${game}_tooltip\\${char}.png`}
         alt={`${char}`}
-        />
+      />
       </div>
       <div className={styles.decBox}>{char}</div>
     </div>

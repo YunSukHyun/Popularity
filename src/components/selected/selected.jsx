@@ -1,33 +1,42 @@
 import styles from './selected.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { pReset} from '../../slice/priconneSlice';
-import { gReset} from '../../slice/genshinSlice';
-import SelectedChar from '../selectedChar/selectedChar';
+import { pReset, pUnselect} from '../../slice/priconneSlice';
+import { gReset, gUnselect} from '../../slice/genshinSlice';
 import { Link } from 'react-router-dom';
 import Legend from '../legend/legend';
-import Submit from '../submit/submit';;
+import Submit from '../submit/submit';
+import CharacterCard from '../characterCard/characterCard';
 
 const Selected = ({game}) => {
   const pCharSelected = useSelector(state => state.priconne.pCharSelected);
   const gCharSelected = useSelector(state => state.genshin.gCharSelected);
   const dispatch = useDispatch();
+  const unSelect = (e) => {
+    const beUnSelected = e.target.alt;
+    if(game === "priconne"){
+      dispatch(pUnselect(beUnSelected));
+    }
+    else if(game === "genshin"){
+      dispatch(gUnselect(beUnSelected));
+    }
+  }
   const showSelected = (rank) => {
     if(game === "priconne"){
       const pLen = pCharSelected.length;
       if(pLen === 0) return;
       switch(rank){
         case 1:
-          return <SelectedChar game={game} char={pCharSelected[0]}/>
+          return <CharacterCard selected={true} game={game} char={pCharSelected[0]} callback={unSelect}/>
         case 2:
           return <>
-          {pLen >= 2 ? <SelectedChar game={game} char={pCharSelected[1]}/> : ""}
-          {pLen >= 3 ? <SelectedChar game={game} char={pCharSelected[2]}/> : ""}
+          {pLen >= 2 ? <CharacterCard selected={true} game={game} char={pCharSelected[1]} callback={unSelect}/> : ""}
+          {pLen >= 3 ? <CharacterCard selected={true} game={game} char={pCharSelected[2]} callback={unSelect}/> : ""}
           </>
         case 3:
           return <>
-          {pLen >= 4 ? <SelectedChar game={game} char={pCharSelected[3]}/> : ""}
-          {pLen >= 5 ? <SelectedChar game={game} char={pCharSelected[4]}/> : ""}
-          {pLen >= 6 ? <SelectedChar game={game} char={pCharSelected[5]}/> : ""}
+          {pLen >= 4 ? <CharacterCard selected={true} game={game} char={pCharSelected[3]} callback={unSelect}/> : ""}
+          {pLen >= 5 ? <CharacterCard selected={true} game={game} char={pCharSelected[4]} callback={unSelect}/> : ""}
+          {pLen >= 6 ? <CharacterCard selected={true} game={game} char={pCharSelected[5]} callback={unSelect}/> : ""}
           </>
         default:
           break;
@@ -38,13 +47,13 @@ const Selected = ({game}) => {
       if(gLen === 0) return;
       switch(rank){
         case 1:
-          return <SelectedChar game={game} char={gCharSelected[0]}/>
+          return <CharacterCard selected={true} game={game} char={gCharSelected[0]} callback={unSelect}/>
         case 2:
           return <>
-          {gLen >= 2 ? <SelectedChar game={game} char={gCharSelected[1]}/> : ""}
+          {gLen >= 2 ? <CharacterCard selected={true} game={game} char={gCharSelected[1]} callback={unSelect}/> : ""}
           </>
         case 3:
-          return <>{gLen >= 3 ? <SelectedChar game={game} char={gCharSelected[2]}/> : ""}</>
+          return <>{gLen >= 3 ? <CharacterCard selected={true} game={game} char={gCharSelected[2]} callback={unSelect}/> : ""}</>
         default:
           break;
       }
