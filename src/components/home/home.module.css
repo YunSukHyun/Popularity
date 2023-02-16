@@ -17,7 +17,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
+
 .sign {
   margin: 0.5em;
   border-radius: 50%;
