@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { login, logout, onUserStateChange } from "../../service/firebase";
 import Header from "../header/header";
@@ -7,7 +8,6 @@ import styles from "./home.module.css";
 
 const Home = () => {
   const [user, setUser] = useState();
-
   useEffect(() => {
     onUserStateChange(setUser);
   }, []);
