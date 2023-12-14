@@ -1,7 +1,7 @@
 import styles from "./characters.module.css";
 import Character from "../character/character";
 import * as gLib from "../../library/genshin_library";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useSelector } from "react-redux";
 
 const GCharacters = ({ game }) => {
@@ -9,7 +9,8 @@ const GCharacters = ({ game }) => {
   const female = gLib.gender[1];
   const [charState, setCharState] = useState([true, true]);
   const gCharSelected = useSelector((state) => state.genshin.gCharSelected);
-  const handleCharList = (e) => {
+
+  const handleCharList = useCallback((e) => {
     e.preventDefault();
     const ClickedBtn = e.target.value;
     switch (ClickedBtn) {
@@ -22,7 +23,8 @@ const GCharacters = ({ game }) => {
       default:
         setCharState([true, true, true]);
     }
-  };
+  }, []);
+
   return (
     <>
       <span className={styles.classify}>분류: </span>

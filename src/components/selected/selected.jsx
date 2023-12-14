@@ -5,149 +5,158 @@ import Legend from "../legend/legend";
 import CharacterCard from "../characterCard/characterCard";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { useCallback } from "react";
 
 const Selected = ({ game }) => {
   const pCharSelected = useSelector((state) => state.priconne.pCharSelected);
   const gCharSelected = useSelector((state) => state.genshin.gCharSelected);
   const dispatch = useDispatch();
-  const unSelect = (e) => {
-    const beUnSelected = e.target.alt;
-    if (game === "priconne") {
-      dispatch(pUnselect(beUnSelected));
-    } else if (game === "genshin") {
-      dispatch(gUnselect(beUnSelected));
-    }
-  };
-  const showSelected = (rank) => {
-    if (game === "priconne") {
-      const pLen = pCharSelected.length;
-      if (pLen === 0) return;
-      switch (rank) {
-        case 1:
-          return (
-            <CharacterCard
-              selected={true}
-              game={game}
-              char={pCharSelected[0]}
-              callback={unSelect}
-            />
-          );
-        case 2:
-          return (
-            <>
-              {pLen >= 2 ? (
-                <CharacterCard
-                  selected={true}
-                  game={game}
-                  char={pCharSelected[1]}
-                  callback={unSelect}
-                />
-              ) : (
-                ""
-              )}
-              {pLen >= 3 ? (
-                <CharacterCard
-                  selected={true}
-                  game={game}
-                  char={pCharSelected[2]}
-                  callback={unSelect}
-                />
-              ) : (
-                ""
-              )}
-            </>
-          );
-        case 3:
-          return (
-            <>
-              {pLen >= 4 ? (
-                <CharacterCard
-                  selected={true}
-                  game={game}
-                  char={pCharSelected[3]}
-                  callback={unSelect}
-                />
-              ) : (
-                ""
-              )}
-              {pLen >= 5 ? (
-                <CharacterCard
-                  selected={true}
-                  game={game}
-                  char={pCharSelected[4]}
-                  callback={unSelect}
-                />
-              ) : (
-                ""
-              )}
-              {pLen >= 6 ? (
-                <CharacterCard
-                  selected={true}
-                  game={game}
-                  char={pCharSelected[5]}
-                  callback={unSelect}
-                />
-              ) : (
-                ""
-              )}
-            </>
-          );
-        default:
-          break;
-      }
-    } else if (game === "genshin") {
-      const gLen = gCharSelected.length;
-      if (gLen === 0) return;
-      switch (rank) {
-        case 1:
-          return (
-            <CharacterCard
-              selected={true}
-              game={game}
-              char={gCharSelected[0]}
-              callback={unSelect}
-            />
-          );
-        case 2:
-          return (
-            <>
-              {gLen >= 2 ? (
-                <CharacterCard
-                  selected={true}
-                  game={game}
-                  char={gCharSelected[1]}
-                  callback={unSelect}
-                />
-              ) : (
-                ""
-              )}
-            </>
-          );
-        case 3:
-          return (
-            <>
-              {gLen >= 3 ? (
-                <CharacterCard
-                  selected={true}
-                  game={game}
-                  char={gCharSelected[2]}
-                  callback={unSelect}
-                />
-              ) : (
-                ""
-              )}
-            </>
-          );
-        default:
-          break;
-      }
-    }
-  };
 
-  const reset = () => {
+  const unSelect = useCallback(
+    (e) => {
+      const beUnSelected = e.target.alt;
+      if (game === "priconne") {
+        dispatch(pUnselect(beUnSelected));
+      } else if (game === "genshin") {
+        dispatch(gUnselect(beUnSelected));
+      }
+    },
+    [dispatch, game]
+  );
+
+  const showSelected = useCallback(
+    (rank) => {
+      if (game === "priconne") {
+        const pLen = pCharSelected.length;
+        if (pLen === 0) return;
+        switch (rank) {
+          case 1:
+            return (
+              <CharacterCard
+                selected={true}
+                game={game}
+                char={pCharSelected[0]}
+                callback={unSelect}
+              />
+            );
+          case 2:
+            return (
+              <>
+                {pLen >= 2 ? (
+                  <CharacterCard
+                    selected={true}
+                    game={game}
+                    char={pCharSelected[1]}
+                    callback={unSelect}
+                  />
+                ) : (
+                  ""
+                )}
+                {pLen >= 3 ? (
+                  <CharacterCard
+                    selected={true}
+                    game={game}
+                    char={pCharSelected[2]}
+                    callback={unSelect}
+                  />
+                ) : (
+                  ""
+                )}
+              </>
+            );
+          case 3:
+            return (
+              <>
+                {pLen >= 4 ? (
+                  <CharacterCard
+                    selected={true}
+                    game={game}
+                    char={pCharSelected[3]}
+                    callback={unSelect}
+                  />
+                ) : (
+                  ""
+                )}
+                {pLen >= 5 ? (
+                  <CharacterCard
+                    selected={true}
+                    game={game}
+                    char={pCharSelected[4]}
+                    callback={unSelect}
+                  />
+                ) : (
+                  ""
+                )}
+                {pLen >= 6 ? (
+                  <CharacterCard
+                    selected={true}
+                    game={game}
+                    char={pCharSelected[5]}
+                    callback={unSelect}
+                  />
+                ) : (
+                  ""
+                )}
+              </>
+            );
+          default:
+            break;
+        }
+      } else if (game === "genshin") {
+        const gLen = gCharSelected.length;
+        if (gLen === 0) return;
+        switch (rank) {
+          case 1:
+            return (
+              <CharacterCard
+                selected={true}
+                game={game}
+                char={gCharSelected[0]}
+                callback={unSelect}
+              />
+            );
+          case 2:
+            return (
+              <>
+                {gLen >= 2 ? (
+                  <CharacterCard
+                    selected={true}
+                    game={game}
+                    char={gCharSelected[1]}
+                    callback={unSelect}
+                  />
+                ) : (
+                  ""
+                )}
+              </>
+            );
+          case 3:
+            return (
+              <>
+                {gLen >= 3 ? (
+                  <CharacterCard
+                    selected={true}
+                    game={game}
+                    char={gCharSelected[2]}
+                    callback={unSelect}
+                  />
+                ) : (
+                  ""
+                )}
+              </>
+            );
+          default:
+            break;
+        }
+      }
+    },
+    [gCharSelected, game, pCharSelected, unSelect]
+  );
+
+  const reset = useCallback(() => {
     dispatch(pReset());
     dispatch(gReset());
-  };
+  }, [dispatch]);
 
   return (
     <section className={styles.selected}>

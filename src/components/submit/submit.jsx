@@ -1,14 +1,15 @@
 import styles from "./submit.module.css";
 import { db } from "../../service/firebase";
 import { doc, getDoc, setDoc } from "firebase/firestore";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useSelector } from "react-redux";
 
 export default function Submit({ game }) {
   const pCharSelected = useSelector((state) => state.priconne.pCharSelected);
   const gCharSelected = useSelector((state) => state.genshin.gCharSelected);
+
   const [sex, setSex] = useState("남자");
-  const handleSubmit = async () => {
+  const handleSubmit = useCallback(async () => {
     const user = sessionStorage.getItem("user");
     const charRef = await getDoc(doc(db, "users", user));
     const isVoted = charRef.data();
@@ -108,7 +109,7 @@ export default function Submit({ game }) {
         }
       });
     }
-  };
+  }, [gCharSelected, game, pCharSelected, sex]);
 
   return (
     <>

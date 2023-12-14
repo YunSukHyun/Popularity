@@ -1,7 +1,7 @@
 import styles from "./characters.module.css";
 import Character from "../character/character";
 import * as pLib from "../../library/priconne_library";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useSelector } from "react-redux";
 
 const PCharacters = ({ game }) => {
@@ -10,7 +10,8 @@ const PCharacters = ({ game }) => {
   const star3 = pLib.characters[2];
   const [charState, setCharState] = useState([true, true, true]);
   const pCharSelected = useSelector((state) => state.priconne.pCharSelected);
-  const handleCharList = (e) => {
+
+  const handleCharList = useCallback((e) => {
     e.preventDefault();
     const ClickedBtn = e.target.value;
     switch (ClickedBtn) {
@@ -26,7 +27,8 @@ const PCharacters = ({ game }) => {
       default:
         setCharState([true, true, true]);
     }
-  };
+  }, []);
+
   return (
     <>
       <span className={styles.classify}>분류: </span>
