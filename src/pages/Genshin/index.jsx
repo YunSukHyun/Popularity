@@ -1,8 +1,8 @@
 import styles from "./game.module.css";
-import Selected from "../selected/selected";
-import Footer from "../footer/footer";
-import Header from "../header/header";
-import Selecting from "../selecting/selecting";
+import Selected from "../../components/selected/selected";
+import Footer from "../../components/footer/footer";
+import Header from "../../components/header/header";
+import Selecting from "../../components/selecting/selecting";
 
 const Genshin = () => {
   return (

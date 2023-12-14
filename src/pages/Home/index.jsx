@@ -1,7 +1,7 @@
 import styles from "./home.module.css";
 import { login, logout, onUserStateChange } from "../../service/firebase";
-import Header from "../header/header";
-import User from "../user/user";
+import Header from "../../components/header/header";
+import User from "../../components/user/user";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";

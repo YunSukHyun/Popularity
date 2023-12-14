@@ -1,8 +1,8 @@
 import styles from "./game.module.css";
-import Footer from "../footer/footer";
-import Header from "../header/header";
-import Selected from "../selected/selected";
-import Selecting from "../selecting/selecting";
+import Footer from "../../components/footer/footer";
+import Header from "../../components/header/header";
+import Selected from "../../components/selected/selected";
+import Selecting from "../../components/selecting/selecting";
 
 const Priconne = () => {
   return (
