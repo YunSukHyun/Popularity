@@ -1,4 +1,4 @@
-.submit{
+.submit {
   margin: 2em 0.5em 0.5em 0.5em;
   padding: 0.2em;
   text-transform: capitalize;
@@ -8,6 +8,6 @@
   border: none;
 }
 
-.submit:hover{
+.submit:hover {
   background-color: rgb(203, 72, 20);
 }

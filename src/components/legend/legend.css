@@ -1,4 +1,4 @@
-.my-legend{
+.my-legend {
   position: relative;
   top: 1em;
   left: 1em;
@@ -8,7 +8,8 @@
   flex-direction: column;
 }
 
-.legend-title, .legend-scale{
+.legend-title,
+.legend-scale {
   padding-left: 0.5em;
 }
 
@@ -44,4 +45,3 @@
   margin-left: 0;
   border: 1px solid #999;
 }
-

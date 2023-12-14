@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Domine&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Domine&display=swap");
 .unselected {
   flex-basis: 50%;
-  background-color:rgb(251, 228, 232, 0.8);
+  background-color: rgb(251, 228, 232, 0.8);
 }
 
-.beforeSelect{
+.beforeSelect {
   width: 100%;
   text-align: center;
   margin-bottom: 1em;
@@ -13,20 +13,20 @@
 
 .selected {
   flex-basis: 50%;
-  background-color: antiquewhite
+  background-color: antiquewhite;
 }
 
-.afterSelect{
+.afterSelect {
   width: 100%;
   text-align: center;
   margin-bottom: 1em;
   color: rgb(199, 8, 8);
 }
 
-.prompt{
+.prompt {
   padding: 1em;
   user-select: none;
-  font-family: 'Domine', serif;
+  font-family: "Domine", serif;
   font-size: 3em;
   text-align: center;
 }

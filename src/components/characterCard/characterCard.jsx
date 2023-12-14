@@ -1,6 +1,6 @@
-import React from 'react';
-import styles from './characterCard.module.css';
-export default function CharacterCard({selected, char, game, callback}) {
+import styles from "./characterCard.module.css";
+
+export default function CharacterCard({ selected, char, game, callback }) {
   return (
     <img
       src={`image\\${game}_img\\${char}.png`}
@@ -10,4 +10,3 @@ export default function CharacterCard({selected, char, game, callback}) {
     />
   );
 }
-

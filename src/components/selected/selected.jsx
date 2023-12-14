@@ -1,11 +1,10 @@
 import styles from "./selected.module.css";
-import { useDispatch, useSelector } from "react-redux";
 import { pReset, pUnselect } from "../../slice/priconneSlice";
 import { gReset, gUnselect } from "../../slice/genshinSlice";
-import { Link } from "react-router-dom";
 import Legend from "../legend/legend";
-import Submit from "../submit/submit";
 import CharacterCard from "../characterCard/characterCard";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 const Selected = ({ game }) => {
   const pCharSelected = useSelector((state) => state.priconne.pCharSelected);

@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import styles from "./home.module.css";
 import { login, logout, onUserStateChange } from "../../service/firebase";
 import Header from "../header/header";
 import User from "../user/user";
-import styles from "./home.module.css";
+import { useState } from "react";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [user, setUser] = useState();

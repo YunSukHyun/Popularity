@@ -1,4 +1,4 @@
-.classify{
+.classify {
   padding-left: 0.5em;
   font-weight: bold;
 }
@@ -20,9 +20,6 @@
   transition: all 0.3s ease;
 }
 .button:hover {
-   box-shadow:
-   -6px -6px 20px 0px #fff9,
-   -1px -1px 5px 0px #fff9,
-   7px 7px 20px 0px #0002,
-   4px 4px 5px 0px #0001;
+  box-shadow: -6px -6px 20px 0px #fff9, -1px -1px 5px 0px #fff9,
+    7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
 }

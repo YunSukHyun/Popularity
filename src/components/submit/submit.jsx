@@ -1,7 +1,7 @@
-import { doc, getDoc, setDoc } from "firebase/firestore";
-import { db } from "../../service/firebase";
-import React, { useState } from "react";
 import styles from "./submit.module.css";
+import { db } from "../../service/firebase";
+import { doc, getDoc, setDoc } from "firebase/firestore";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 
 export default function Submit({ game }) {
