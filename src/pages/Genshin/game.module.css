@@ -12,13 +12,6 @@
   background-repeat: round;
 }
 
-.pContainer {
-  flex: 1;
-  display: flex;
-  background-image: url(../../../public/image/priconne_background.jpg);
-  background-repeat: round;
-}
-
 @media screen and (max-width: 62rem) {
   .container {
     flex-direction: column;

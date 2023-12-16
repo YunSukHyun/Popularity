@@ -5,13 +5,6 @@
   flex-direction: column;
 }
 
-.gContainer {
-  flex: 1;
-  display: flex;
-  background-image: url(../../../public/image/genshin_background.jpg);
-  background-repeat: round;
-}
-
 .pContainer {
   flex: 1;
   display: flex;
