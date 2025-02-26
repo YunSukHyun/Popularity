@@ -38,7 +38,12 @@ const Home = () => {
         {user && <User user={user}></User>}
         {!user && (
           <button className={styles.sign} onClick={login}>
-            Login with Google
+            <img
+              className={styles.google}
+              src="image/Google.png"
+              alt="google"
+            />
+            Sign in with Google
           </button>
         )}
         {user && (
