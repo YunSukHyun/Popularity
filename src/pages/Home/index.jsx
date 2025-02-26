@@ -1,6 +1,5 @@
 import styles from "./home.module.css";
 import { login, logout, onUserStateChange } from "../../service/firebase";
-import Header from "../../components/header/header";
 import User from "../../components/user/user";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -13,21 +12,25 @@ const Home = () => {
   }, []);
 
   return (
-    <>
-      <Header title="인기투표(종료)" />
+    <div className={styles.home}>
       <div className={styles.img}>
-        <Link to="/genshin">
+        <img
+          className={styles.priconne}
+          src="image/link_img/priconne.png"
+          alt="priconne"
+        />
+
+        <img
+          className={styles.genshin}
+          src="image/link_img/genshin.png"
+          alt="genshin"
+        />
+
+        <Link to="/starrail">
           <img
-            className={styles.genshin}
-            src="image/link_img/genshin.png"
-            alt="genshin"
-          />
-        </Link>
-        <Link to="/priconne">
-          <img
-            className={styles.priconne}
-            src="image/link_img/priconne.png"
-            alt="priconne"
+            className={styles.starrail}
+            src="image/link_img/starrail.png"
+            alt="starrail"
           />
         </Link>
       </div>
@@ -44,7 +47,8 @@ const Home = () => {
           </button>
         )}
       </div>
-    </>
+      <Link to={"/admin"}>Admin</Link>
+    </div>
   );
 };
 

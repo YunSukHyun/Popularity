@@ -1,0 +1,102 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  max-height: 1000px;
+  margin: 24px auto;
+  padding: 16px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.h1 {
+  text-align: center;
+  color: black;
+  font-size: 32px;
+  margin: 4px;
+}
+
+.productForm {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+label {
+  user-select: none;
+}
+
+.input,
+.contents {
+  width: 84%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.contents {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.inlined {
+  display: flex;
+  margin-top: 4px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.select {
+  display: flex;
+  width: 84%;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.selectedCategory {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.button {
+  width: 100%;
+  padding: 15px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.button:hover {
+  background-color: #4caf50;
+}
+
+.images {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.imagePreview {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 8px;
+  margin-top: 10px;
+}
+
+.imagePreview img {
+  max-width: 160px;
+  max-height: 160px;
+  object-fit: cover;
+  border-radius: 4px;
+}
