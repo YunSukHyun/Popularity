@@ -1,6 +1,7 @@
 .unselected {
   cursor: pointer;
-  max-width: 5em;
+  width: 128px;
+  height: 128px;
 }
 
 .unselected:hover {

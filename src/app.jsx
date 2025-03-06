@@ -1,6 +1,5 @@
 import "./app.css";
 import Home from "./pages/Home";
-import Genshin from "./pages/Genshin";
 import Priconne from "./pages/Priconne";
 import Starrail from "./pages/Starrail";
 import "material-icons/iconfont/material-icons.css";
@@ -21,7 +20,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/starrail" element={<Starrail />} />
-            <Route path="/genshin" element={<Genshin />} />
+            {/* <Route path="/genshin" element={<Genshin />} /> */}
             <Route path="/priconne" element={<Priconne />} />
             <Route path="/admin" element={<Admin />} />
           </Route>
